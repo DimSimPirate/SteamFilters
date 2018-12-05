@@ -1,0 +1,1038 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IgdbApi</name>
+    </assembly>
+    <members>
+        <member name="T:IgdbApi.MetaInfo">
+            <summary>
+            Represents the basic information available for all collections in IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.MetaInfo.Size">
+            <summary>
+            Gets the number of objects in the requested collection.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.CompaniesMetaInfo">
+            <summary>
+            Represents meta information for the IGDB companies collection.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.FranchisesMetaInfo">
+            <summary>
+            Represents meta information for the IGDB game franchises collection.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.GamesMetaInfo">
+            <summary>
+            Represents meta information for the IGDB games collection.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.PeopleMetaInfo">
+            <summary>
+            Represents meta information for the IGDB people collection.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.PlatformsMetaInfo">
+            <summary>
+            Represents meta information for the IGDB game platforms collection.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.IIgdbGamesApi">
+            <summary>
+            Defines the interface for querying game information from the Internet Games Database.
+            </summary>
+        </member>
+        <member name="M:IgdbApi.IIgdbGamesApi.GetGamesAsync(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of games as an asynchronous operation.
+            </summary>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of game summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IIgdbGamesApi.SearchGamesAsync(System.String,IgdbApi.Search.GameSearchFilter[])">
+            <summary>
+            Retrieves a list of games matching the search query and optional search filters as an asynchronous operation.
+            </summary>
+            <param name="query">A query term to search the games with.</param>
+            <param name="filters">A set of filters used to limit the result set.</param>
+            <returns>A list of game summaries matching the search query and filters.</returns>
+        </member>
+        <member name="M:IgdbApi.IIgdbGamesApi.GetGameAsync(System.Int32)">
+            <summary>
+            Retrieves a specific game's information as an asynchronous operation.
+            </summary>
+            <param name="gameId">The ID of the game to look up.</param>
+            <returns>The full information of the specified game.</returns>
+        </member>
+        <member name="M:IgdbApi.IIgdbGamesApi.GetGamesMetaInfoAsync">
+            <summary>
+            Retrieves information about the list of games known to IGDB.
+            </summary>
+            <returns>An object describing the meta information for the games collection.</returns>
+        </member>
+        <member name="T:IgdbApi.IIgdbFranchisesApi">
+            <summary>
+            Defines the interface for querying game franchise information from the Internet Games Database.
+            </summary>
+        </member>
+        <member name="M:IgdbApi.IIgdbFranchisesApi.GetFranchisesAsync(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of game franchises as an asynchronous operation.
+            </summary>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of game franchise summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IIgdbFranchisesApi.GetFranchiseAsync(System.Int32)">
+            <summary>
+            Retrieve's a specific game franchise's information as an asynchronous operation.
+            </summary>
+            <param name="franchiseId">The ID of the game franchise to look up.</param>
+            <returns>The full information of the specified game franchise.</returns>
+        </member>
+        <member name="M:IgdbApi.IIgdbFranchisesApi.GetFranchiseGamesAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of games related to a specified company as an asynchronous operation.
+            </summary>
+            <param name="franchiseId">The ID of the game franchise whose games are being looked up.</param>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of game summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IIgdbFranchisesApi.GetFranchisesMetaInfoAsync">
+            <summary>
+            Retrieves information about the list of companies known to IGDB.
+            </summary>
+            <returns>An object describing the meta information for the companies collection.</returns>
+        </member>
+        <member name="T:IgdbApi.IIgdbPlatformsApi">
+            <summary>
+            Defines the interface for querying platform information from the Internet Games Database.
+            </summary>
+        </member>
+        <member name="M:IgdbApi.IIgdbPlatformsApi.GetPlatformsAsync(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of platforms as an asynchronous operation.
+            </summary>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of platform summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IIgdbPlatformsApi.GetPlatformAsync(System.Int32)">
+            <summary>
+            Retrieve's a specific platform's information as an asynchronous operation.
+            </summary>
+            <param name="platformId">The ID of the platform to look up.</param>
+            <returns>The full information of the specified platform.</returns>
+        </member>
+        <member name="M:IgdbApi.IIgdbPlatformsApi.GetPlatformGamesAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of games related to a specified company as an asynchronous operation.
+            </summary>
+            <param name="platformId">The ID of the platform whose games are being looked up.</param>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of game summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IIgdbPlatformsApi.GetPlatformsMetaInfoAsync">
+            <summary>
+            Retrieves information about the list of companies known to IGDB.
+            </summary>
+            <returns>An object describing the meta information for the companies collection.</returns>
+        </member>
+        <member name="T:IgdbApi.IIgdbCompaniesApi">
+            <summary>
+            Defines the interface for querying company information from the Internet Games Database.
+            </summary>
+        </member>
+        <member name="M:IgdbApi.IIgdbCompaniesApi.GetCompaniesAsync(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of companies as an asynchronous operation.
+            </summary>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of company summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IIgdbCompaniesApi.GetCompanyAsync(System.Int32)">
+            <summary>
+            Retrieve's a specific company's information as an asynchronous operation.
+            </summary>
+            <param name="companyId">The ID of the company to look up.</param>
+            <returns>The full information of the specified company.</returns>
+        </member>
+        <member name="M:IgdbApi.IIgdbCompaniesApi.GetCompanyGamesAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of games related to a specified company as an asynchronous operation.
+            </summary>
+            <param name="companyId">The ID of the company whose games are being looked up.</param>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of company summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IIgdbCompaniesApi.GetCompaniesMetaInfoAsync">
+            <summary>
+            Retrieves information about the list of companies known to IGDB.
+            </summary>
+            <returns>An object describing the meta information for the companies collection.</returns>
+        </member>
+        <member name="T:IgdbApi.IIgdbPeopleApi">
+            <summary>
+            Defines the interface for querying people information from the Internet Games Database.
+            </summary>
+        </member>
+        <member name="M:IgdbApi.IIgdbPeopleApi.GetPeopleAsync(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of platforms as an asynchronous operation.
+            </summary>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of person summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IIgdbPeopleApi.GetPersonAsync(System.Int32)">
+            <summary>
+            Retrieve's a specific person's information as an asynchronous operation.
+            </summary>
+            <param name="personId">The ID of the person to look up.</param>
+            <returns>The full information of the specified person.</returns>
+        </member>
+        <member name="M:IgdbApi.IIgdbPeopleApi.GetPersonGamesAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of games related to a specified person as an asynchronous operation.
+            </summary>
+            <param name="personId">The ID of the person whose games are being looked up.</param>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of game summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IIgdbPeopleApi.GetPeopleMetaInfoAsync">
+            <summary>
+            Retrieves information about the list of people known to IGDB.
+            </summary>
+            <returns>An object describing the meta information for the people collection.</returns>
+        </member>
+        <member name="T:IgdbApi.IIgdbApi">
+            <summary>
+            Defines the interface for the IGDB public API.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.IIgdbApi.ApiKey">
+            <summary>
+            Gets the API key used for requests to the IGDB API.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.PersonSummary">
+            <summary>
+            Represents basic details of a person.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.AlternativeName">
+            <summary>
+            Represents an alternative name for a game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.AlternativeName.Name">
+            <summary>
+            Gets the alternative name.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.AlternativeName.Comment">
+            <summary>
+            Gets a comment describing the name.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.CompanyBase">
+            <summary>
+            Represents the basic properties of companies on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.CompanyBase.Id">
+            <summary>
+            Gets the ID value of the company.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.CompanyBase.Name">
+            <summary>
+            Gets the name of the company.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.FranchiseSummary">
+            <summary>
+            Represents basic details of a game franchise.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.GameBase">
+            <summary>
+            Represents the basic properties of games on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.GameBase.Id">
+            <summary>
+            Gets the ID value of the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.GameBase.Slug">
+            <summary>
+            Gets the URL slug for the game's page on the IGDB website.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.GameBase.Name">
+            <summary>
+            Gets the name of the game.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.PlatformSummary">
+            <summary>
+            Represents basic details for a platform.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.GenreInfo">
+            <summary>
+            Represents a genre of gameplay.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.GenreInfo.Name">
+            <summary>
+            Gets the name of the genre.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.ImageInfo">
+            <summary>
+            Represents information about an image on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.ImageInfo.Id">
+            <summary>
+            Gets the ID of the image.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.ImageInfo.Url">
+            <summary>
+            Gets the public URL of the image.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.ImageInfo.Width">
+            <summary>
+            Gets the width of the image in pixels.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.ImageInfo.Height">
+            <summary>
+            Gets the height of the image in pixels.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.ThemeInfo">
+            <summary>
+            Represents a story theme exhibited in a game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.ThemeInfo.Name">
+            <summary>
+            Gets the name of the theme.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.VideoInfo">
+            <summary>
+            Represents a video stored on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.VideoInfo.Id">
+            <summary>
+            Gets the ID value of the video.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.VideoInfo.Title">
+            <summary>
+            Gets the title of the video.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.Company">
+            <summary>
+            Represents a company.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Company.Slug">
+            <summary>
+            Gets the URL slug for the company's page on the IGDB website.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Company.AverageRating">
+            <summary>
+            Gets the aggregate review rating of the the company's games.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Company.ParentId">
+            <summary>
+            Gets the ID of the company's parent organization.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Company.CompanyLogo">
+            <summary>
+            Gets details about the company's logo as stored on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Company.FoundedYear">
+            <summary>
+            Gets the year the company was founded.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.CompanySummary">
+            <summary>
+            Represents basic details of a company.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.GameCompanyInfo">
+            <summary>
+            Represents the relationship between a game and the named company.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.GameCompanyInfo.IsPublisher">
+            <summary>
+            Gets whether or not the company was involved in the publishing of the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.GameCompanyInfo.IsDeveloper">
+            <summary>
+            Gets whether or not the company was involved in the development of the game.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.Franchise">
+            <summary>
+            Represents a game franchise.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.FranchiseBase">
+            <summary>
+            Represents the basic properties of a game franchise on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.FranchiseBase.Id">
+            <summary>
+            Gets the ID value of the game franchise.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.FranchiseBase.Slug">
+            <summary>
+            Gets the URL slug for the game franchise's page on the IGDB website.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.FranchiseBase.Name">
+            <summary>
+            Gets the name of the game franchise.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.Game">
+            <summary>
+            Represents a game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.AlternativeNames">
+            <summary>
+            Gets a list of alternative names for the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.CreatedAt">
+            <summary>
+            Gets the date and time when the game was added to IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.UpdatedAt">
+            <summary>
+            Gets the date and time when the game was last updated on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.Summary">
+            <summary>
+            Gets a summary describing the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.Genres">
+            <summary>
+            Gets the list of genres for the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.Themes">
+            <summary>
+            Gets the list of themes of the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.Rating">
+            <summary>
+            Gets the aggregate review rating of the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.ReleaseDates">
+            <summary>
+            Gets the list of release dates and associated platforms for the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.Companies">
+            <summary>
+            Gets a list of companies involved in developing and publishing the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.Cover">
+            <summary>
+            Gets details about the cover image for the game's page on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.Screenshots">
+            <summary>
+            Gets a list of screenshots of the game on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Game.Videos">
+            <summary>
+            Gets a list of videos of the game on IGDB.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.GameSummary">
+            <summary>
+            Represents basic details for a game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.GameSummary.AlternativeName">
+            <summary>
+            Gets the first alternative name of the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.GameSummary.ReleaseDate">
+            <summary>
+            Gets the first release date of the game.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.Person">
+            <summary>
+            Represents a person associated with the development or publication of a game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Person.DateOfBirth">
+            <summary>
+            Gets the person's date of birth.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Person.CountryId">
+            <summary>
+            Gets the ID of the person's country of residence.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Person.Bio">
+            <summary>
+            Gets a biography of the person.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.Person.Mugshot">
+            <summary>
+            Gets details of a photograph of the person on IGDB.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.PersonBase">
+            <summary>
+            Represents basic properties of people on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.PersonBase.Id">
+            <summary>
+            Gets the ID value of the person.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.PersonBase.Slug">
+            <summary>
+            Gets the URL slug for the person's page on the IGDB website.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.PersonBase.Name">
+            <summary>
+            Gets the name of the person.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.Platform">
+            <summary>
+            Represents a gaming platform.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.PlatformBase">
+            <summary>
+            Represents the basic properties of platforms in IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.PlatformBase.Id">
+            <summary>
+            Gets the ID value of the game.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.PlatformBase.Slug">
+            <summary>
+            Gets the URL slug for the game's page on the IGDB website.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.PlatformBase.Name">
+            <summary>
+            Gets the name of the game.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.ReleaseDateInfo">
+            <summary>
+            Represents when a game was released on a specified platform.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.ReleaseDateInfo.PlatformName">
+            <summary>
+            Gets the name of the platform for the game's release.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.ReleaseDateInfo.ReleaseDate">
+            <summary>
+            Gets the date of the game's release on the specified platform.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Models.ScreenshotInfo">
+            <summary>
+            Represents a screenshot of a game on IGDB.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Models.ScreenshotInfo.Title">
+            <summary>
+            Gets the title of the screenshot.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.SearchFilterQueryTermAttribute">
+            <summary>
+            Specifies the term used for building a query parameter for a search filter with particular properties.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.SearchFilterQueryTermAttribute.Term">
+            <summary>
+            Gets the term string used in creating the query parameter name.
+            </summary>
+        </member>
+        <member name="M:IgdbApi.SearchFilterQueryTermAttribute.#ctor(System.String)">
+            <summary>
+            Instantiates a new instance of <see cref="T:IgdbApi.SearchFilterQueryTermAttribute"/> with the provided term string.
+            </summary>
+            <param name="term">The term string to use for the decorated filter property.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="term"/> is <c>null</c> or an empty string.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="term"/> contains only whitespace characters.</exception>
+        </member>
+        <member name="T:IgdbApi.Search.FilterOperation">
+            <summary>
+            Represents the operation to perform for a search filter.
+            </summary>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.GreaterThan">
+            <summary>Return only results where the field value is greater than the filter value.</summary>
+            <remarks>This operation only applies for numeric fields.</remarks>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.GreaterThanOrEqual">
+            <summary>Return only results where the field value is greater than or equal to the filter value.</summary>
+            <remarks>This operation only applies for numeric fields.</remarks>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.LessThan">
+            <summary>Return only results where the field value is less than the filter value.</summary>
+            <remarks>This operation only applies for numeric fields.</remarks>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.LessThanOrEqual">
+            <summary>Return only results where the field value is less than or equal to the filter value.</summary>
+            <remarks>This operation only applies for numeric fields.</remarks>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.Contains">
+            <summary>Return only results where the field value contains the filter value.</summary>
+            <remarks>This operation performs a basic full text search on the field being filtered.</remarks>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.Equal">
+            <summary>Return only results where the field value is an exact match to the filter value.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.NotEqual">
+            <summary>Return only results where the field value is not an exact match to the filter value.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.Null">
+            <summary>Return only results where the field value is not set.</summary>
+            <remarks>When this operation is selected, the filter value is not required.</remarks>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.Present">
+            <summary>Return only results where the field value is set, regardless of the field value.</summary>
+            <remarks>When this operation is selected, the filter value is not required.</remarks>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.InSet">
+            <summary>Return only results where the field value contains one or more elements in the filter value.</summary>
+            <remarks>
+            This operation treats the filter value as a comma separated list of values, and returns records where the
+            selected field contains at least one of the values in the list.
+            </remarks>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.InAll">
+            <summary>Return only results where the field value contains all elements in the filter value.</summary>
+            <remarks>
+            This operation treats the filter value as a comma separated list of values, and returns records where the
+            selected field contains all of the values in the list.
+            </remarks>
+        </member>
+        <member name="F:IgdbApi.Search.FilterOperation.Prefix">
+            <summary>Return only results where the field value starts with the filter value.</summary>
+            <remarks>This operation only applies for text fields.</remarks>
+        </member>
+        <member name="T:IgdbApi.Search.GameFields">
+            <summary>
+            Represents the field used for a game search.
+            </summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Id">
+            <summary>ID of the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Slug">
+            <summary>The URL slug of the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Name">
+            <summary>Name of the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.AlternativeName">
+            <summary>Alternative names list of the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Summary">
+            <summary>Summary of the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Storyline">
+            <summary>Storyline of the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Rating">
+            <summary>Rating of the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Hypes">
+            <summary>Hypes that the game has.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Themes">
+            <summary>A list of theme IDs that the game has.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.GameModes">
+            <summary>A list of game mode IDs that the game has.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Platforms">
+            <summary>A list of platform IDs that the game has.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Genres">
+            <summary>A list of genre IDs that the game has.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Keywords">
+            <summary>A list of keyword IDs that the game has.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.ReleaseDate">
+            <summary>The first release date of the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Companies">
+            <summary>A list of names of the companies related to the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.CompanyIds">
+            <summary>The list of company IDs for companies related to the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Ratings">
+            <summary>The IDs of the ESRB and PEGI ratings given to the game.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.Characters">
+            <summary>A list of related character IDs.</summary>
+        </member>
+        <member name="F:IgdbApi.Search.GameFields.People">
+            <summary>A list of related person IDs.</summary>
+        </member>
+        <member name="T:IgdbApi.Search.SearchFilterBase`1">
+            <summary>
+            Represents a filter parameter for a search operation.
+            </summary>
+            <typeparam name="TFieldEnum"></typeparam>
+        </member>
+        <member name="P:IgdbApi.Search.SearchFilterBase`1.Field">
+            <summary>
+            Gets or sets the field on which the filter will operate.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Search.SearchFilterBase`1.Operation">
+            <summary>
+            Gets or sets the operation that will be used to perform filtering.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.Search.SearchFilterBase`1.Value">
+            <summary>
+            Gets or sets the value that will be filtered against.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Search.GameSearchFilter">
+            <summary>
+            Represents a filter for game searches.
+            </summary>
+        </member>
+        <member name="T:IgdbApi.Enums">
+            <summary>
+            Provides extension methods for enumeration types.
+            </summary>
+        </member>
+        <member name="M:IgdbApi.Enums.GetValues``1">
+            <summary>
+            Retrieves the defined values in the specified enumeration type.
+            </summary>
+            <typeparam name="TEnum">The enumeration type to enumerate.</typeparam>
+            <returns>A sequence of values that are defined in the specified enumeration type.</returns>
+        </member>
+        <member name="M:IgdbApi.Enums.GetName``1(``0)">
+            <summary>
+            Retrieves the name of the constant in an enumeration that has the specified value.
+            </summary>
+            <typeparam name="TEnum">The enumeration type to which <paramref name="value"/> belongs.</typeparam>
+            <param name="value">The value of to look up from the <typeparamref name="TEnum"/> enumeration.</param>
+            <returns>
+            A string containing the name of the enumerated constant whose value is <paramref name="value"/>; or
+            <c>null</c> if no such constant is found.
+            </returns>
+        </member>
+        <member name="M:IgdbApi.Enums.GetAttributes``1(System.Enum)">
+            <summary>
+            Retrieves the attributes of a specified type associated with the provided enumeration constant.
+            </summary>
+            <typeparam name="TAttribute">The type of attributes to return.</typeparam>
+            <param name="value">The enumeration constant to look up.</param>
+            <returns>
+            A sequence of custom attributes of the specified type decorating the provided enumeration constant.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="value"/> is not defined in its enumeration type.
+            </exception>
+        </member>
+        <member name="T:IgdbApi.IgdbApi">
+            <summary>
+            Provides an implementation for the IGDB API.
+            </summary>
+        </member>
+        <member name="P:IgdbApi.IgdbApi.ApiKey">
+            <summary>
+            Gets the API key being used for requests to the IGDB API.
+            </summary>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:IgdbApi.IgdbApi"/> class.
+            </summary>
+            <param name="apiKey">The API key to use for requests to the IGDB API.</param>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetGamesAsync(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of games as an asynchronous operation.
+            </summary>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of game summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.SearchGamesAsync(System.String,IgdbApi.Search.GameSearchFilter[])">
+            <summary>
+            Retrieves a list of games matching the search query and optional search filters as an asynchronous operation.
+            </summary>
+            <param name="query">A query term to search the games with.</param>
+            <param name="filters">A set of filters used to limit the result set.</param>
+            <returns>A list of game summaries matching the search query and filters.</returns>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetGameAsync(System.Int32)">
+            <summary>
+            Retrieves a specific game's information as an asynchronous operation.
+            </summary>
+            <param name="gameId">The ID of the game to look up.</param>
+            <returns>The full information of the specified game.</returns>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetGamesMetaInfoAsync">
+            <summary>
+            Retrieves information about the list of games known to IGDB.
+            </summary>
+            <returns>An object describing the meta information for the games collection.</returns>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetFranchisesAsync(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of game franchises as an asynchronous operation.
+            </summary>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of game franchise summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetFranchiseAsync(System.Int32)">
+            <summary>
+            Retrieve's a specific game franchise's information as an asynchronous operation.
+            </summary>
+            <param name="franchiseId">The ID of the game franchise to look up.</param>
+            <returns>The full information of the specified game franchise.</returns>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetFranchiseGamesAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of games related to a specified company as an asynchronous operation.
+            </summary>
+            <param name="franchiseId">The ID of the game franchise whose games are being looked up.</param>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of game summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetFranchisesMetaInfoAsync">
+            <summary>
+            Retrieves information about the list of companies known to IGDB.
+            </summary>
+            <returns>An object describing the meta information for the companies collection.</returns>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetPlatformsAsync(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of platforms as an asynchronous operation.
+            </summary>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of platform summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetPlatformAsync(System.Int32)">
+            <summary>
+            Retrieve's a specific platform's information as an asynchronous operation.
+            </summary>
+            <param name="platformId">The ID of the platform to look up.</param>
+            <returns>The full information of the specified platform.</returns>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetPlatformGamesAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of games related to a specified company as an asynchronous operation.
+            </summary>
+            <param name="platformId">The ID of the platform whose games are being looked up.</param>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of game summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetPlatformsMetaInfoAsync">
+            <summary>
+            Retrieves information about the list of companies known to IGDB.
+            </summary>
+            <returns>An object describing the meta information for the companies collection.</returns>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetCompaniesAsync(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of companies as an asynchronous operation.
+            </summary>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of company summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetCompanyAsync(System.Int32)">
+            <summary>
+            Retrieve's a specific company's information as an asynchronous operation.
+            </summary>
+            <param name="companyId">The ID of the company to look up.</param>
+            <returns>The full information of the specified company.</returns>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetCompanyGamesAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of games related to a specified company as an asynchronous operation.
+            </summary>
+            <param name="companyId">The ID of the company whose games are being looked up.</param>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of company summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetCompaniesMetaInfoAsync">
+            <summary>
+            Retrieves information about the list of companies known to IGDB.
+            </summary>
+            <returns>An object describing the meta information for the companies collection.</returns>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetPeopleAsync(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of platforms as an asynchronous operation.
+            </summary>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of person summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetPersonAsync(System.Int32)">
+            <summary>
+            Retrieve's a specific person's information as an asynchronous operation.
+            </summary>
+            <param name="personId">The ID of the person to look up.</param>
+            <returns>The full information of the specified person.</returns>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetPersonGamesAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves a list of games related to a specified person as an asynchronous operation.
+            </summary>
+            <param name="personId">The ID of the person whose games are being looked up.</param>
+            <param name="limit">The limit of how many results should be returned.</param>
+            <param name="offset">The offset into the list of games where results should be returned from.</param>
+            <returns>A list of game summaries.</returns>
+            <remarks>
+            <para>If unset, <paramref name="limit"/> defaults to 25 results, which is the maximum allowed per call.</para>
+            <para>If unset, <paramref name="offset"/> defaults to 0.</para>
+            </remarks>
+        </member>
+        <member name="M:IgdbApi.IgdbApi.GetPeopleMetaInfoAsync">
+            <summary>
+            Retrieves information about the list of people known to IGDB.
+            </summary>
+            <returns>An object describing the meta information for the people collection.</returns>
+        </member>
+    </members>
+</doc>

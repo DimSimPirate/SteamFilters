@@ -1,0 +1,38 @@
+﻿<Page x:Class="SteamFilters.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SteamFilters"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="Home">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Height="65" Padding="5" Background="#4E87D4AA" VerticalAlignment="Bottom" Margin="0,0,0,226">
+            <Label VerticalAlignment="Center" Foreground="White" Margin="5,0,0,5" FontSize="30">Login</Label>
+        </Border>
+        <TextBox VerticalAlignment="Bottom" Grid.Column="0" Height="50" Name="UsernameTextBox" Margin="0,0,0,176" Text="Enter your Steam username ..." Background="#AAAAAAAA" Foreground="White"/>
+        <Button VerticalAlignment="Bottom" Grid.Column="0" Margin="10,0,0,136" Width="125" Height="25" HorizontalAlignment="Left" Click="TypedUser" Content="View"/>
+        <Label VerticalAlignment="Top" Content="Saved Players" Background="#AAAAAAAA" Foreground="White" Grid.Row="1" FontSize="16"/>
+        <ListBox VerticalAlignment="Top" Name="peopleListBox" Grid.Column="0" Grid.Row="2" Background="#AAAAAAAA" Margin="0,30,0,0" Height="200">
+        </ListBox>
+        <Button VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" Margin="10,252,0,0" Width="125" Height="25" HorizontalAlignment="Left" Click="SelectedUser">View</Button>
+        <Button VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Margin="140,252,0,0" Width="125" Height="25" HorizontalAlignment="Left" Click="DeleteUser">Delete</Button>
+    </Grid>
+</Page>

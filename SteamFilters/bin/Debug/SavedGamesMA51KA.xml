@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<ArrayOfSteamGame xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SteamGame>
+    <Name>Darkest Dungeon</Name>
+    <Id>262060</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks xsi:nil="true" />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/262060/af219e7f9ed0506cb0954aabb7f24a45e38d28e4.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/262060/22ec3716f853524c8367d7463fc102d18dd514fe.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/262060</SteamPageUrl>
+    <Price>$24.99 USD</Price>
+    <OverallReviews>86% of 32,239</OverallReviews>
+    <RecentReviews>83% of 444</RecentReviews>
+  </SteamGame>
+  <SteamGame>
+    <Name>DiRT 3</Name>
+    <Id>44320</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks xsi:nil="true" />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/44320/c75648fec8ff9f218e3b1b5dcb7ac38b8b2e7bda.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/44320/fad5f8433cda40c9fa3b1488d75eefa42cf0a765.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/44320</SteamPageUrl>
+    <Price />
+  </SteamGame>
+  <SteamGame>
+    <Name>DiRT 3 Complete Edition</Name>
+    <Id>321040</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks xsi:nil="true" />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/321040/fdfb3aa153b57d6ae6cd8099cb4456b3d5b182b6.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/321040/bb89ef19777c30c8551b0f4eea296d6ca33007cc.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/321040</SteamPageUrl>
+    <Price />
+  </SteamGame>
+  <SteamGame>
+    <Name>Endless Sky</Name>
+    <Id>404410</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks xsi:nil="true" />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/404410/acedfa887b34f1347dcfaeaa8c2f227c6544bc0a.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/404410/40668f1eb360a8bb7726ae6bce7ab7fa4902e92d.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/404410</SteamPageUrl>
+    <Price>Free</Price>
+    <OverallReviews>90% of 3,443</OverallReviews>
+    <RecentReviews>90% of 44</RecentReviews>
+  </SteamGame>
+  <SteamGame>
+    <Name>FTL: Faster Than Light</Name>
+    <Id>212680</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks xsi:nil="true" />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/212680/e8770ddb95fde0804694b116dfe3479f5a65900d.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/212680/975193db5ca8cc2a4c969cea8f80d93157264ec1.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/212680</SteamPageUrl>
+    <Price>$9.99 USD</Price>
+    <OverallReviews>96% of 30,885</OverallReviews>
+    <RecentReviews>91% of 173</RecentReviews>
+  </SteamGame>
+  <SteamGame>
+    <Name>Middle-earth™: Shadow of War™</Name>
+    <Id>356190</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks xsi:nil="true" />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/356190/316c479e5d51d21e15eb8f82338fce82c42c4115.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/356190/5c8d36880cac09260240bc8931df20a7a19f3933.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/356190</SteamPageUrl>
+    <Price />
+  </SteamGame>
+  <SteamGame>
+    <Name>PLAYERUNKNOWN'S BATTLEGROUNDS</Name>
+    <Id>578080</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks xsi:nil="true" />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/578080/93d896e7d7a42ae35c1d77239430e1d90bc82cae.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/578080/2d2732a33511b58c69aff6b098a22687a3bb8533.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/578080</SteamPageUrl>
+    <Price />
+  </SteamGame>
+  <SteamGame>
+    <Name>Rocket League</Name>
+    <Id>252950</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/252950/9ad6dd3d173523354385955b5fb2af87639c4163.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/252950/3854e40582bc14b8ba3c9ee163a0fa64bc538def.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/252950</SteamPageUrl>
+    <Price>$19.99 USD</Price>
+    <OverallReviews>92% of 151,744</OverallReviews>
+    <RecentReviews>85% of 2,109</RecentReviews>
+  </SteamGame>
+  <SteamGame>
+    <Name>Steep Open Beta</Name>
+    <Id>550040</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks xsi:nil="true" />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/550040/275cd4254449b78f4409b2b497e2486f562368ec.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/550040/d95ee83478f489b52b3b51e5b1a8d59de6054572.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/550040</SteamPageUrl>
+    <Price />
+  </SteamGame>
+  <SteamGame>
+    <Name>Total War: WARHAMMER II</Name>
+    <Id>594570</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/594570/fe90760b3b9537216e52ccc5d88de2e67ac500c2.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/594570/a752b2873a294084371eb484268d90c2abdbfda9.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/594570</SteamPageUrl>
+    <Price>$67.99 USD</Price>
+    <OverallReviews>87% of 8,488</OverallReviews>
+    <RecentReviews>85% of 319</RecentReviews>
+  </SteamGame>
+  <SteamGame>
+    <Name>XCOM 2</Name>
+    <Id>268500</Id>
+    <Playtime />
+    <PlaytimeLastTwoWeeks xsi:nil="true" />
+    <ImgIconUrl>http://media.steampowered.com/steamcommunity/public/images/apps/268500/f275aeb0b1b947262810569356a199848c643754.jpg</ImgIconUrl>
+    <ImgLogoUrl>http://media.steampowered.com/steamcommunity/public/images/apps/268500/10a6157d6614f63cd8a95d002d022778c207c218.jpg</ImgLogoUrl>
+    <SteamPageUrl>https://store.steampowered.com/app/268500</SteamPageUrl>
+    <Price>$59.99 USD</Price>
+    <OverallReviews>80% of 19,065</OverallReviews>
+    <RecentReviews>71% of 440</RecentReviews>
+  </SteamGame>
+</ArrayOfSteamGame>
